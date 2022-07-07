@@ -8,6 +8,7 @@ import * as UserController from './controllers/UserController.js';
 import * as ProductController from './controllers/ProductController.js';
 import * as CartController from './controllers/CartController.js';
 import * as OrderController from './controllers/OrderController.js';
+import { payment } from "./services/stripe.js";
 
 import {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin} from "./services/verifyToken.js";
 
@@ -45,6 +46,8 @@ app.delete('/api/order/:id', verifyTokenAndAdmin, OrderController.deleteOrder);
 app.get('/api/order/:id', verifyTokenAndAuthorization, OrderController.getUserOrders);
 app.get('/api/order', verifyTokenAndAdmin, OrderController.getAllOrders);
 app.get('/api/income', verifyTokenAndAdmin, OrderController.getMonthlyIncome);
+
+
 
 
 
