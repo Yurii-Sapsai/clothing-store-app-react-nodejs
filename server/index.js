@@ -8,7 +8,6 @@ import * as UserController from './controllers/UserController.js';
 import * as ProductController from './controllers/ProductController.js';
 import * as CartController from './controllers/CartController.js';
 import * as OrderController from './controllers/OrderController.js';
-import { payment } from "./services/stripe.js";
 
 import {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin} from "./services/verifyToken.js";
 
@@ -57,20 +56,13 @@ app.get('/api/income', verifyTokenAndAdmin, OrderController.getMonthlyIncome);
 
 
 
-
-
-
-
-
-
-
 mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log('db OK!'))
     .catch((err) => console.log('db ERROR!', err))
 
 
 
-app.listen(process.env.PORT || 4444, (error) => {
+app.listen(4444, (error) => {
     if (error) {
         return console.log(error);
     }
