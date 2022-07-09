@@ -6,9 +6,6 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 
-import { useEffect, useState } from "react";
-import { userRequest } from "../requestMethods";
-import { useHistory } from "react-router";
 import { useSelector } from 'react-redux';
 
 const Container = styled.div``;
@@ -194,7 +191,7 @@ const Cart = () => {
                       <b>Size:</b> {product.size}
                     </ProductSize>
                   </Details>
-                </ProductDetail> 
+                </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
                     <AddIcon />
